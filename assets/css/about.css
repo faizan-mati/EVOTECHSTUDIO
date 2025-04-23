@@ -1,0 +1,90 @@
+/* ====================== BUTTON ======================= */
+.MainBtn {
+    background-image: linear-gradient(to right, #050C9C, #01c0ff);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.MainBtn:hover {
+    background-color: #050C9C;
+    transform: scale(1.05);
+}
+
+.HeroBtn {
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    border: 1px solid black;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.HeroBtn:hover {
+    background-image: linear-gradient(to right, #050C9C, #01c0ff);
+    transform: scale(1.05);
+    color: #fff;
+    border: none;
+}
+
+/* ====================== NAVBAR LINK ======================= */
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3572EF;
+    transition: width 0.4s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3572EF;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 90%;
+}
+
+.navbar-nav .nav-link.active {
+    color: #3572EF;
+}
+
+/* Prevent navbar items from wrapping */
+.navbar .container {
+    flex-wrap: nowrap !important;
+}
+
+/* Optional: Logo size control */
+.logoImg {
+    height: 25%;
+    width: 25%;
+}
+
+@media screen and (min-width: 250px) and (max-width: 575px) {
+    .logoImg {
+        width: 120px;
+        height: auto;
+    }
+  }

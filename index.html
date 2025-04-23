@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <!-- =================================== NAVBAR SECTION =========================================  -->
+
+    <nav class="navbar navbar-light bg-light fixed-top shadow-sm">
+        <div class="container d-flex justify-content-between align-items-center flex-nowrap">
+
+            <!-- Brand -->
+            <a class="navbar-brand" href="#">
+                <img class="logoImg" src="./assets/images/logo.png" alt="" />
+            </a>
+
+            <!-- Centered Links for large screens -->
+            <div class="d-none d-lg-block mx-auto position-absolute start-50 translate-middle-x">
+                <ul class="navbar-nav d-flex flex-row mb-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Toggle Button (only visible on small screens) -->
+            <button class="navbar-toggler d-lg-none flex-shrink-0 ms-auto" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Get a Quote button for large screens -->
+            <div class="d-none d-lg-block">
+                <button class="MainBtn" type="submit">Get a Quote</button>
+            </div>
+
+            <!-- Offcanvas for small screens -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">EVO TECH STUDIO</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                    <div class="d-flex mt-3">
+                        <button class="MainBtn" type="submit">Get a Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- =================================== HERO SECTION =========================================  -->
+
+    <section class="heroSection py-5">
+        <div class="container mt-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-start text-lg-start mb-4 mb-lg-0">
+                    <h1 class="fw-bold display-5">Your Digital <br> Partner for <br> <span
+                            class="text-gradient">Scalable Growth</span></h1>
+                    <p class="text-muted mt-3">Web, UI/UX, Shopify, and Marketing solutions for startups, small
+                        businesses, and e-commerce brands.</p>
+                    <div class="d-flex flex-wrap gap-3 mt-4 justify-content-start justify-content-lg-start">
+                        <button class="MainBtn">Get a Free Quote</button>
+                        <button class="HeroBtn">View Our Work</button>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img class="img-fluid responsive-img" src="./assets/images/hero_img.png" alt="EVO TECH STUDIO">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- =================================== SERICES SECTION =========================================  -->
+
+    <section class="serviceSection py-5 bg-light mt-5">
+        <div class="container">
+            <h1 class="text-center mb-5">What We Do</h1>
+            <div class="row g-4">
+                <!-- Service Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="serviceCard p-4 shadow-sm rounded bg-white h-100">
+
+                        <div class="iconBox d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+
+                        <h5>Web Development</h5>
+                        <p>We build fast, secure, and scalable websites tailored to your business goals.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="serviceCard p-4 shadow-sm rounded bg-white h-100">
+
+                        <div class="iconBox d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-palette"></i>
+                        </div>
+
+                        <h5>UI/UX Design</h5>
+                        <p>From wireframes to polished interfaces, we design experiences users love.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="serviceCard p-4 shadow-sm rounded bg-white h-100">
+
+                        <div class="iconBox d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+
+                        <h5>Shopify Development</h5>
+                        <p>Custom Shopify solutions that help your e-commerce brand scale.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="serviceCard p-4 shadow-sm rounded bg-white h-100">
+
+                        <div class="iconBox d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                        </div>
+
+                        <h5>SEO & Marketing</h5>
+                        <p>Strategies that drive traffic, visibility, and conversions.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="serviceCard p-4 shadow-sm rounded bg-white h-100">
+
+                        <div class="iconBox d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+
+                        <h5>Branding & Strategy</h5>
+                        <p>We help define your identity and tone across platforms.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn More →</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="serviceCard p-4 shadow-sm rounded bg-white h-100">
+
+                        <div class="iconBox d-inline-flex align-items-center justify-content-center mb-3">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+
+                        <h5>Maintenance & Support</h5>
+                        <p>Reliable support for performance, security, and updates.</p>
+                        <a href="#" class="text-primary text-decoration-none">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================== BRAND WORK WITH US SECTION =========================================  -->
+
+    <section class="brandSection py-5 mt-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Why Choose Us</h1>
+            <div class="row g-4">
+                <!-- Service Card 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="brandCard p-4 shadow rounded bg-white h-100">
+
+                        <div class="d-flex justify-content-center">
+                            <div class="BrandIconBox d-inline-flex align-items-center justify-content-center mb-3">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-semibold text-center">Tailored Solutions</h5>
+                        <p class="text-muted flex-grow-1 text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam atque commodi
+                            eveniet. Et quia nihil rem optio minima facere velit, aperiam blanditiis necessitatibus,
+                            facilis est, deleniti totam fugiat dicta.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="brandCard p-4 shadow rounded bg-white h-100">
+
+                        <div class="d-flex justify-content-center">
+                            <div class="BrandIconBox d-inline-flex align-items-center justify-content-center mb-3">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-semibold text-center">Fast & Scalable Delivery</h5>
+                        <p class="text-muted flex-grow-1 text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam atque commodi
+                            eveniet. Et quia nihil rem optio minima facere velit, aperiam blanditiis necessitatibus,
+                            facilis est, deleniti totam fugiat dicta.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="brandCard p-4 shadow rounded bg-white h-100">
+
+                        <div class="d-flex justify-content-center">
+                            <div class="BrandIconBox d-inline-flex align-items-center justify-content-center mb-3">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-semibold text-center">Clear Communication</h5>
+                        <p class="text-muted flex-grow-1 text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam atque commodi
+                            eveniet. Et quia nihil rem optio minima facere velit, aperiam blanditiis necessitatibus,
+                            facilis est, deleniti totam fugiat dicta.
+                        </p>
+
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="brandCard p-4 shadow rounded bg-white h-100">
+
+                        <div class="d-flex justify-content-center">
+                            <div class="BrandIconBox d-inline-flex align-items-center justify-content-center mb-3">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                        </div>
+
+                        <h5 class="fw-semibold text-center">Results-Driven Approach</h5>
+                        <p class="text-muted flex-grow-1 text-center">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quibusdam atque commodi
+                            eveniet. Et quia nihil rem optio minima facere velit, aperiam blanditiis necessitatibus,
+                            facilis est, deleniti totam fugiat dicta.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================== PROJECT SECTION =========================================  -->
+
+    <section class="portfolio-section py-5 mt-5 bg-light">
+        <div class="container">
+            <h1 class="text-center mb-5">Our Project</h1>
+
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4 col-sm-12 project-col">
+                    <div class="project-card">
+                        <div class="project-preview">Project 1 Preview</div>
+                        <div class="project-info">
+                            <h4 class="project-title">[Project Title 1]</h4>
+                            <p class="project-category">[Category: Web Dev, UI/UX]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4 col-sm-12 project-col">
+                    <div class="project-card">
+                        <div class="project-preview">Project 2 Preview</div>
+                        <div class="project-info">
+                            <h4 class="project-title">[Project Title 2]</h4>
+                            <p class="project-category">[Category: Shopify]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4 col-sm-12 project-col">
+                    <div class="project-card">
+                        <div class="project-preview">Project 3 Preview</div>
+                        <div class="project-info">
+                            <h4 class="project-title">[Project Title 3]</h4>
+                            <p class="project-category">[Category: Branding]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="view-all-btn" id="portfolioBtn">View Full Portfolio</a>
+        </div>
+    </section>
+
+    <!-- =================================== TESTIMONIAL SECTION =========================================  -->
+
+    <section class="testimonials-section">
+        <h1 class="text-center mb-5">Testimonials</h1>
+
+        <div class="testimonials-container">
+            <div id="testimonialsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- Testimonial 1 -->
+                    <div class="carousel-item active">
+                        <div class="testimonial-item">
+                            <div class="testimonial-image-column">
+                                <div class="testimonial-image-wrapper">
+                                    <div class="testimonial-blob"></div>
+                                    <img src="./assets/images/testimonial.jpg" alt="Doug Arnold"
+                                        class="testimonial-image">
+                                </div>
+                            </div>
+                            <div class="testimonial-content-column">
+                                <p class="testimonial-quote">"Working with this team has transformed our digital
+                                    presence completely. Our online sales have increased by 200% in just six months!"
+                                </p>
+                                <h4 class="testimonial-name">Doug Arnold</h4>
+                                <p class="testimonial-title">Entrepreneur</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-item">
+                            <div class="testimonial-image-column">
+                                <div class="testimonial-image-wrapper">
+                                    <div class="testimonial-blob"></div>
+                                    <img src="./assets/images/testimonial.jpg" alt="Sarah Johnson"
+                                        class="testimonial-image">
+                                </div>
+                            </div>
+                            <div class="testimonial-content-column">
+                                <p class="testimonial-quote">"Working with this team has transformed our digital
+                                    presence completely. Our online sales have increased by 200% in just six months!"
+                                </p>
+                                <h4 class="testimonial-name">Sarah Johnson</h4>
+                                <p class="testimonial-title">Marketing Director</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="carousel-item">
+                        <div class="testimonial-item">
+                            <div class="testimonial-image-column">
+                                <div class="testimonial-image-wrapper">
+                                    <div class="testimonial-blob"></div>
+                                    <img src="./assets/images/testimonial.jpg" alt="Michael Chen"
+                                        class="testimonial-image">
+                                </div>
+                            </div>
+                            <div class="testimonial-content-column">
+                                <p class="testimonial-quote">"The attention to detail and creative solutions provided by
+                                    this agency have helped us stand out in a crowded marketplace. Highly recommended!"
+                                </p>
+                                <h4 class="testimonial-name">Michael Chen</h4>
+                                <p class="testimonial-title">Startup Founder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialsCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =================================== FOOTER SECTION =========================================  -->
+
+    <div class="container">
+        <div class="cta-section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h2 class="cta-heading">Ready to build something great?</h2>
+                    <button class="MainBtn" id="consultationBtn">Book a Free Consultation</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">EVOTECH.STUDIO</div>
+                    <div class="footer-tagline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum
+                        facilis natus. Asperiores cum magnam iure delectus omnis quos, sapiente ratione, corrupti minus
+                        incidunt ad. Quasi officiis ducimus ut nam!</div>
+                </div>
+
+                <!-- Company Links -->
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources Links -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect Links -->
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Connect</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Dribbble</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <span>© Current Year EVOTECH.STUDIO. All Rights Reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="social-icons">
+                            <a href="#"><i class="bi bi-linkedin"></i></a>
+                            <a href="#"><i class="bi bi-twitter-x"></i></a>
+                            <a href="#"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./assets/js/script.js"></script>
+
+</body>
+
+</html>

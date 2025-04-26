@@ -1,4 +1,98 @@
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Variables
+  const navbar = document.querySelector('.evo-navbar');
+  const navToggle = document.querySelector('.evo-navbar__toggle');
+  const mobileMenu = document.querySelector('.evo-mobile-menu');
+  const mobileMenuClose = document.querySelector('.evo-mobile-menu__close');
+  const body = document.body;
+  
+  // Create overlay element
+  const overlay = document.createElement('div');
+  overlay.classList.add('evo-menu-overlay');
+  body.appendChild(overlay);
+  
+  // Toggle mobile menu
+  navToggle.addEventListener('click', function() {
+    navToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+    overlay.classList.toggle('active');
+    body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  
+  // Close mobile menu
+  mobileMenuClose.addEventListener('click', function() {
+    navToggle.classList.remove('active');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('active');
+    body.style.overflow = '';
+  });
+  
+  // Close menu when clicking overlay
+  overlay.addEventListener('click', function() {
+    navToggle.classList.remove('active');
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('active');
+    body.style.overflow = '';
+  });
+  
+  // Navbar scroll effect
+  function toggleScrollClass() {
+    if (window.scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+  
+  // Initialize on load
+  toggleScrollClass();
+  
+  // Listen for scroll
+  window.addEventListener('scroll', toggleScrollClass);
+  
+  // Add active class to current page link
+  const currentPage = window.location.pathname.split('/').pop();
+  const navLinks = document.querySelectorAll('.evo-navbar__link');
+  const mobileLinks = document.querySelectorAll('.evo-mobile-menu__link');
+  
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('evo-navbar__link--active');
+    } else {
+      link.classList.remove('evo-navbar__link--active');
+    }
+  });
+  
+  mobileLinks.forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('evo-mobile-menu__link--active');
+    } else {
+      link.classList.remove('evo-mobile-menu__link--active');
+    }
+  });
+  
+  // Hover animation for desktop nav links
+  navLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      if (!this.classList.contains('evo-navbar__link--active')) {
+        const indicator = this.querySelector('.evo-navbar__link-indicator');
+        indicator.style.width = '65%';
+      }
+    });
+    
+    link.addEventListener('mouseleave', function() {
+      if (!this.classList.contains('evo-navbar__link--active')) {
+        const indicator = this.querySelector('.evo-navbar__link-indicator');
+        indicator.style.width = '0';
+      }
+    });
+  });
+});
+
+
 // =============================== HERO SECTION =======================================
 
 document.addEventListener("DOMContentLoaded", function() {

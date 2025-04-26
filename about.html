@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/about.css">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -32,71 +33,140 @@
 
     <!-- =================================== NAVBAR SECTION =========================================  -->
 
-    <nav class="navbar navbar-light bg-light fixed-top shadow-sm">
-        <div class="container d-flex justify-content-between align-items-center flex-nowrap">
-
-            <!-- Brand -->
-            <a class="navbar-brand" href="./index.html">
-                <img class="logoImg" src="./assets/images//Logo.png" alt="" />
-            </a>
-
-            <!-- Centered Links for large screens -->
-            <div class="d-none d-lg-block mx-auto position-absolute start-50 translate-middle-x">
-                <ul class="navbar-nav d-flex flex-row mb-0">
-                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="./about.html">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Service</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Toggle Button (only visible on small screens) -->
-            <button class="navbar-toggler d-lg-none flex-shrink-0 ms-auto" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span class="navbar-toggler-icon"></span>
+    <nav class="evo-navbar">
+        <div class="evo-navbar__container">
+          <!-- Logo -->
+          <a href="./index.html" class="evo-navbar__logo">
+            <img src="./assets/images/Logo.png" alt="EVO TECH STUDIO" />
+          </a>
+          
+          <!-- Main Navigation -->
+          <div class="evo-navbar__menu">
+            <ul class="evo-navbar__links">
+              <li class="evo-navbar__item">
+                <a href="./index.html" class="evo-navbar__link">
+                  <span class="evo-navbar__link-text">Home</span>
+                  <span class="evo-navbar__link-indicator"></span>
+                </a>
+              </li>
+              <li class="evo-navbar__item">
+                <a href="./about.html" class="evo-navbar__link evo-navbar__link--active">
+                  <span class="evo-navbar__link-text">About us</span>
+                  <span class="evo-navbar__link-indicator"></span>
+                </a>
+              </li>
+              <li class="evo-navbar__item">
+                <a href="#" class="evo-navbar__link">
+                  <span class="evo-navbar__link-text">Service</span>
+                  <span class="evo-navbar__link-indicator"></span>
+                </a>
+              </li>
+              <li class="evo-navbar__item">
+                <a href="#" class="evo-navbar__link">
+                  <span class="evo-navbar__link-text">Portfolio</span>
+                  <span class="evo-navbar__link-indicator"></span>
+                </a>
+              </li>
+              <li class="evo-navbar__item">
+                <a href="#" class="evo-navbar__link">
+                  <span class="evo-navbar__link-text">Contact</span>
+                  <span class="evo-navbar__link-indicator"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+      
+          <!-- CTA Button -->
+          <div class="evo-navbar__cta">
+            <button class="evo-btn">
+              <span class="evo-btn__gradient-bg"></span>
+              <span class="evo-btn__text">Get a Quote</span>
+              <span class="evo-btn__icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
             </button>
-
-            <!-- Get a Quote button for large screens -->
-            <div class="d-none d-lg-block">
-                <button class="MainBtn" type="submit">Get a Quote</button>
+          </div>
+          
+          <!-- Mobile Toggle -->
+          <button class="evo-navbar__toggle" type="button" aria-label="Toggle menu">
+            <span class="evo-navbar__toggle-line"></span>
+            <span class="evo-navbar__toggle-line"></span>
+            <span class="evo-navbar__toggle-line"></span>
+          </button>
+          
+          <!-- Mobile Menu -->
+          <div class="evo-mobile-menu">
+            <div class="evo-mobile-menu__header">
+              <!-- <h3 class="evo-mobile-menu__title">EVO TECH STUDIO</h3> -->
+              <button class="evo-mobile-menu__close" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
             </div>
-
-            <!-- Offcanvas for small screens -->
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">EVO TECH STUDIO</h5>
-                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="./about.html">About us</a></li>
-                        <li class="nav-item"><a class="nav-link " href="#">Service</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-                    </ul>
-                    <div class="d-flex mt-3">
-                        <button class="MainBtn" type="submit">Get a Quote</button>
-                    </div>
-                </div>
+            <div class="evo-mobile-menu__body">
+              <ul class="evo-mobile-menu__links">
+                <li class="evo-mobile-menu__item">
+                  <a href="./index.html" class="evo-mobile-menu__link">Home</a>
+                </li>
+                <li class="evo-mobile-menu__item">
+                  <a href="./about.html" class="evo-mobile-menu__link evo-mobile-menu__link--active">About us</a>
+                </li>
+                <li class="evo-mobile-menu__item">
+                  <a href="#" class="evo-mobile-menu__link">Service</a>
+                </li>
+                <li class="evo-mobile-menu__item">
+                  <a href="#" class="evo-mobile-menu__link">Portfolio</a>
+                </li>
+                <li class="evo-mobile-menu__item">
+                  <a href="#" class="evo-mobile-menu__link">Contact</a>
+                </li>
+              </ul>
+              <div class="evo-mobile-menu__cta">
+                <button class="evo-btn evo-btn--mobile">
+                  <span class="evo-btn__gradient-bg"></span>
+                  <span class="evo-btn__text">Get a Quote</span>
+                </button>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
+      </nav>
+      
 
 
     <!-- =================================== HERO SECTION =========================================  -->
 
-
-    <section class="contact-hero mt-5">
-        <div class="container-fluid">
-            <div class="row text-center text-light">
-                <div class="col-lg-12">
-                    <h4 class="Nunito fs-1 mb-3">About Us</h4>
-                    <a class="home" href="./index.html"> <span><i class="fa fa-home"></i> Home</span></a>
-                    <span> <i class="fa-regular fa-circle-dot "></i> About Us</span>
+    <section class="about-hero-container">
+        <!-- Animated Background -->
+        <div class="wave-bg">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+        </div>
+        
+        <!-- Floating Shapes -->
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">About Us</h1>
+            <div class="breadcrumb">
+                <a href="./index.html">
+                    <i class="fa fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <div class="current">
+                    <i class="fa-regular fa-circle-dot"></i>
+                    <span>About Us</span>
                 </div>
             </div>
         </div>
@@ -364,16 +434,42 @@
 
     <!-- =================================== FOOTER SECTION =========================================  -->
 
-    <div class="container">
-        <div class="cta-section">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h2 class="cta-heading">Ready to build something great?</h2>
-                    <button class="MainBtn" id="consultationBtn">Book a Free Consultation</button>
+    <div class="container shine-cta-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="shine-cta">
+                    <!-- Floating Elements -->
+                    <div class="shine-cta__floating-elements">
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                        <div class="floating-element"></div>
+                    </div>
+
+                    <!-- Glow Effects -->
+                    <div class="shine-cta__glow"></div>
+                    <div class="shine-cta__glow"></div>
+
+                    <div class="shine-cta__content">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-xl-8">
+                                <h2 class="shine-cta__title">Ready to build something great?</h2>
+                                <button class="shine-cta__btn" id="consultationBtn">
+                                    <span class="shine-cta__btn-text">
+                                        Book a Free Consultation
+                                        <svg class="shine-cta__btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <footer class="footer">
         <div class="container">

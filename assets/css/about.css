@@ -132,6 +132,29 @@ body {
 
 /* ================== ABOUT US AND MISSION VISSION SECTION ======================== */
 
+
+.about-title-bar {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--blue), var(--light-blue));
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .about-title-bar::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+    box-shadow: 0 0 10px rgba(58, 190, 249, 0.5);
+    animation: pulse 2s infinite;
+  }
+
 .about-section-title {
     position: relative;
     margin-bottom: 3rem;
@@ -139,17 +162,27 @@ body {
     /* color: ; */
 }
 
-.about-section-title::before {
+.mission-title-bar {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--white));
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+  }
+  
+  .mission-title-bar::before {
     content: '';
     position: absolute;
-    width: 10%;
-    height: 3px;
-    bottom: -8px;
-    left: 5%;
-    transform: translateX(-50%);
-    background-color: var(--blue);
-    border-radius: 10px;
-}
+    width: 15px;
+    height: 15px;
+    background-color: var(--light);
+    border-radius: 50%;
+    top: -5px;
+    right: -5px;
+    box-shadow: 0 0 10px rgba(58, 190, 249, 0.5);
+    animation: pulse 2s infinite;
+  }
 
 .heading-section h1 {
     position: relative;
@@ -157,7 +190,7 @@ body {
     color: #000;
 }
 
-.heading-section h1::before {
+/* .heading-section h1::before {
     content: '';
     position: absolute;
     width: 20%;
@@ -167,7 +200,7 @@ body {
     transform: translateX(-50%);
     background-color: #ffffff;
     border-radius: 10px;
-}
+} */
 
 .heading-section {
     /* padding: 80px 0; */
@@ -467,7 +500,7 @@ body {
     margin-bottom: 25px;
 }
 
-.team-heading-section h1::after {
+/* .team-heading-section h1::after {
     content: '';
     position: absolute;
     width: 70px;
@@ -477,7 +510,7 @@ body {
     left: 11%;
     transform: translateX(-50%);
     border-radius: 10px;
-}
+} */
 
 .team-description {
     max-width: 600px;

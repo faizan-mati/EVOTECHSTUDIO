@@ -110,3 +110,258 @@
     text-decoration: none !important;
     color: rgb(196, 196, 196);
 }
+
+
+:root {
+    --navy: #050C9C;
+    --blue: #3572EF;
+    --light-blue: #3ABEF9;
+    --pale-blue: #A7E6FF;
+    --white: #ffffff;
+    --light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--light);
+    color: #333;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    /* color: ; */
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background: #3572EF;
+    border-radius: 2px;
+}
+
+.section-title.centered::after {
+    left: 37%;
+    transform: translateX(-50%);
+}
+
+.about-section, .mission-section {
+    padding: 5rem 0;
+    position: relative;
+}
+
+.about-section {
+    background-color: var(--light);
+}
+
+.mission-section {
+    background-image: linear-gradient(to right, #050C9C, #01c0ff);
+    position: relative;
+}
+
+.mission-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background-color: var(--light);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+}
+
+.about-img-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(5, 12, 156, 0.2);
+    height: 100%;
+}
+
+.about-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.about-img-container:hover .about-img {
+    transform: scale(1.05);
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(5, 12, 156, 0.1);
+    transition: all 0.5s ease;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 30px rgba(5, 12, 156, 0.15);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blue);
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background-color: var(--white);
+    transform: rotateX(0deg);
+}
+
+.card-back {
+    background-color: var(--white);
+    transform: rotateX(180deg);
+    opacity: 0;
+}
+
+.card:hover .card-front {
+    transform: rotateX(180deg);
+    opacity: 0;
+}
+
+.card:hover .card-back {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+
+.mission-card .card-icon {
+    background-color: var(--navy);
+}
+
+.vision-card .card-icon {
+    background-color: var(--blue);
+}
+
+.values-card .card-icon {
+    background-color: var(--light-blue);
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.value-icon {
+    min-width: 40px;
+    height: 40px;
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.counter-box {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(5, 12, 156, 0.1);
+    transition: all 0.3s ease;
+}
+
+.counter-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(5, 12, 156, 0.15);
+}
+
+.counter-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+}
+
+.counter-text {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.highlight {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+    .about-content {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .counter-box {
+        margin-bottom: 1.5rem;
+    }
+    
+    .card {
+        height: 220px;
+    }
+}
+
+.card h3 {
+    color: var(--navy);
+    font-weight: 600;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.card-back p {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}

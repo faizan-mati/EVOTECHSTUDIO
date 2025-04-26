@@ -64,18 +64,18 @@
     width: 0%;
     height: 2px;
     bottom: 5px;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 20%; /* left se start karwana hai */
     background-color: #3572EF;
     transition: width 0.4s ease;
 }
 
-.navbar-nav .nav-link:hover {
-    color: #3572EF;
+.navbar-nav .nav-link:hover::after {
+    width: 65%; /* ya jitna chaho, 90% ki jagah 100% kar lo */
 }
 
-.navbar-nav .nav-link:hover::after {
-    width: 90%;
+
+.navbar-nav .nav-link:hover {
+    color: #3572EF;
 }
 
 .navbar-nav .nav-link.active {
@@ -255,7 +255,7 @@
   
   .digi-card-inner {
     background-color: var(--white);
-    padding: 2.5rem 1.75rem;
+    padding: 1.5rem 1.5rem;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
     position: relative;

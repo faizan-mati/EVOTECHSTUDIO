@@ -1,23 +1,64 @@
 
 // =============================== HERO SECTION =======================================
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function() {
+  // 3D Card Effect
+  const card = document.querySelector('.evo-hero__card-content');
+  const container = document.querySelector('.evo-hero__card');
+  
+  container.addEventListener('mousemove', function(e) {
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+    
+    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+  });
+  
+  container.addEventListener('mouseenter', function() {
+    card.style.transition = 'none';
+  });
+  
+  container.addEventListener('mouseleave', function() {
+    card.style.transition = 'transform 0.5s ease';
+    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+  });
+  
+  // Intersection Observer for scroll animations
   const observerOptions = {
-    threshold: 0.2
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
   };
-
-  const observer = new IntersectionObserver((entries, observer) => {
+  
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("hero-reveal");
+        if (entry.target.classList.contains('evo-hero__content')) {
+          entry.target.style.animation = 'fadeSlideUp 1s forwards';
+        }
+        else if (entry.target.classList.contains('evo-hero__visual')) {
+          entry.target.style.animation = 'fadeIn 1s forwards';
+        }
         observer.unobserve(entry.target);
       }
     });
+  }, observerOptions);
+  
+  document.querySelectorAll('.evo-hero__content, .evo-hero__visual').forEach(el => {
+    observer.observe(el);
   });
-
-  document.querySelectorAll('.heroSection h1, .heroSection p, .responsive-img')
-    .forEach(el => observer.observe(el));
+  
+  // Social Icons Hover Animation
+  const socialLinks = document.querySelectorAll('.evo-social__link');
+  socialLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      this.querySelector('.evo-social__icon').style.transform = 'scale(1.1)';
+    });
+    
+    link.addEventListener('mouseleave', function() {
+      this.querySelector('.evo-social__icon').style.transform = 'scale(1)';
+    });
+  });
 });
+
 // =============================== SERVICE CARD SECTION =======================================
 
 document.addEventListener('DOMContentLoaded', function() {

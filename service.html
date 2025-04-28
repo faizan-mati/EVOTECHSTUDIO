@@ -173,130 +173,132 @@
 
     <!-- ============================ SERVICES SECTION =========================== -->
 
-   <!-- SERVICES SECTION HTML -->
-<section class="tm-services">
-    <div class="container">
-      <div class="tm-services__header">
-        <h2 class="tm-services__title">Our Expert Services</h2>
-        <p class="tm-services__subtitle">We deliver exceptional digital solutions tailored to your business needs</p>
-      </div>
-      
-      <div class="tm-services__grid">
-        <!-- Web Development Card -->
-        <div class="tm-service-card" data-service="web-development">
-          <div class="tm-service-card__content">
-            <div class="tm-service-card__icon-wrapper">
-              <div class="tm-service-card__icon">
-                <i class="fas fa-code"></i>
+    <section class="services-showcase">
+        <div class="container">
+          <div class="showcase-header" data-animation="fade-up">
+            <h2 class="showcase-title">Our Expert Services</h2>
+            <p class="showcase-subtitle">We deliver exceptional digital solutions tailored to your business needs</p>
+          </div>
+          
+          <div class="service-cards">
+            <!-- Web Development Service Card -->
+            <div class="service-card" data-animation="slide-up">
+              <div class="card-visual order-first">
+                <div class="card-image-container">
+                  <div class="floating-element" data-floating="top-left"></div>
+                  <div class="floating-element" data-floating="bottom-right"></div>
+                  <img src="./assets/images/service/Software Development.png" alt="Web Development" class="card-image">
+                  <div class="image-shape"></div>
+                </div>
+              </div>
+              
+              <div class="card-content">
+                <div class="service-icon-wrapper" data-animation="bounce">
+                  <i class="fas fa-code service-icon-primary"></i>
+                  <div class="icon-glow"></div>
+                </div>
+                <h3 class="service-card-title" data-animation="fade-right">Web Development</h3>
+                <p class="service-card-tagline" data-animation="fade-right" data-delay="100">Need a website that performs as good as it looks?</p>
+                
+                <div class="card-divider" data-animation="grow-width" data-delay="200"></div>
+                
+                <p class="service-card-description" data-animation="fade-up" data-delay="300">
+                  We build fast, secure, and scalable websites tailored to your business 
+                  goals—whether it's a landing page, e-commerce site, or a full web 
+                  application using modern frameworks.
+                </p>
+                
+                <ul class="service-features" data-animation="fade-up" data-delay="400">
+                  <li class="feature" data-animation="slide-right">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">Custom Design & Development</span>
+                  </li>
+                  <li class="feature" data-animation="slide-right" data-delay="50">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">Responsive Across Devices</span>
+                  </li>
+                  <li class="feature" data-animation="slide-right" data-delay="100">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">CMS Integration</span>
+                  </li>
+                  <li class="feature" data-animation="slide-right" data-delay="150">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">Performance Optimization</span>
+                  </li>
+                </ul>
+                
+                <div class="card-action" data-animation="fade-up" data-delay="500">
+                  <a href="#" class="action-button">
+                    <span class="button-text">Start Your Web Project</span>
+                    <span class="button-icon"><i class="fas fa-arrow-right"></i></span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
               </div>
             </div>
             
-            <h3 class="tm-service-card__title">Web Development</h3>
-            <p class="tm-service-card__tagline">Need a website that performs as good as it looks?</p>
-            
-            <p class="tm-service-card__description">
-              We build fast, secure, and scalable websites tailored to your business 
-              goals—whether it's a landing page, e-commerce site, or a full web 
-              application using modern frameworks.
-            </p>
-            
-            <ul class="tm-service-card__features">
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>Custom Design & Development</span>
-              </li>
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>Responsive Across Devices</span>
-              </li>
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>CMS Integration</span>
-              </li>
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>Performance Optimization</span>
-              </li>
-            </ul>
-            
-            <a href="#" class="tm-service-card__cta">
-              Start Your Web Project
-              <span class="tm-service-card__cta-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
-          </div>
-          
-          <div class="tm-service-card__image-container">
-            <div class="tm-service-card__image-wrapper">
-              <img src="./assets/images/service/Software Development.png" alt="Web Development" class="tm-service-card__image">
-              <div class="tm-service-card__image-shape"></div>
-              <div class="tm-service-card__image-glow"></div>
+            <!-- UI/UX Design Service Card -->
+            <div class="service-card" data-animation="slide-up" data-delay="200">
+              <div class="card-visual order-first">
+                <div class="card-image-container">
+                  <div class="floating-element" data-floating="top-right"></div>
+                  <div class="floating-element" data-floating="bottom-left"></div>
+                  <img src="./assets/images/service/UIUX Design.png" alt="UI/UX Design" class="card-image">
+                  <div class="image-shape"></div>
+                </div>
+              </div>
+              
+              <div class="card-content">
+                <div class="service-icon-wrapper" data-animation="bounce">
+                  <i class="fas fa-paint-brush service-icon-primary"></i>
+                  <div class="icon-glow"></div>
+                </div>
+                <h3 class="service-card-title" data-animation="fade-right">UI/UX Design</h3>
+                <p class="service-card-tagline" data-animation="fade-right" data-delay="100">Want users to love interacting with your product?</p>
+                
+                <div class="card-divider" data-animation="grow-width" data-delay="200"></div>
+                
+                <p class="service-card-description" data-animation="fade-up" data-delay="300">
+                  From user research and wireframes to polished interfaces and usability 
+                  testing, we design digital experiences that are intuitive, engaging, and 
+                  effective for your users.
+                </p>
+                
+                <ul class="service-features" data-animation="fade-up" data-delay="400">
+                  <li class="feature" data-animation="slide-right">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">User Research & Personas</span>
+                  </li>
+                  <li class="feature" data-animation="slide-right" data-delay="50">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">Wireframing & Prototyping</span>
+                  </li>
+                  <li class="feature" data-animation="slide-right" data-delay="100">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">High-Fidelity Visual Design</span>
+                  </li>
+                  <li class="feature" data-animation="slide-right" data-delay="150">
+                    <span class="feature-check"><i class="fas fa-check"></i></span>
+                    <span class="feature-text">Usability Testing & Iteration</span>
+                  </li>
+                </ul>
+                
+                <div class="card-action" data-animation="fade-up" data-delay="500">
+                  <a href="#" class="action-button">
+                    <span class="button-text">Improve Your UX</span>
+                    <span class="button-icon"><i class="fas fa-arrow-right"></i></span>
+                    <div class="button-glow"></div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
         
-        <!-- UI/UX Design Card -->
-        <div class="tm-service-card" data-service="ui-ux-design">
-          <div class="tm-service-card__content">
-            <div class="tm-service-card__icon-wrapper">
-              <div class="tm-service-card__icon">
-                <i class="fas fa-paint-brush"></i>
-              </div>
-            </div>
-            
-            <h3 class="tm-service-card__title">UI/UX Design</h3>
-            <p class="tm-service-card__tagline">Want users to love interacting with your product?</p>
-            
-            <p class="tm-service-card__description">
-              From user research and wireframes to polished interfaces and usability 
-              testing, we design digital experiences that are intuitive, engaging, and 
-              effective for your users.
-            </p>
-            
-            <ul class="tm-service-card__features">
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>User Research & Personas</span>
-              </li>
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>Wireframing & Prototyping</span>
-              </li>
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>High-Fidelity Visual Design</span>
-              </li>
-              <li class="tm-service-card__feature">
-                <span class="tm-service-card__feature-icon"><i class="fas fa-check-circle"></i></span>
-                <span>Usability Testing & Iteration</span>
-              </li>
-            </ul>
-            
-            <a href="#" class="tm-service-card__cta">
-              Improve Your UX
-              <span class="tm-service-card__cta-arrow">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
-          </div>
-          
-          <div class="tm-service-card__image-container">
-            <div class="tm-service-card__image-wrapper">
-              <img src="./assets/images/service/UIUX Design.png" alt="UI/UX Design" class="tm-service-card__image">
-              <div class="tm-service-card__image-shape"></div>
-              <div class="tm-service-card__image-glow"></div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section>
+        <!-- Background decoration elements -->
+        <div class="bg-decoration" data-position="top-left"></div>
+        <div class="bg-decoration" data-position="bottom-right"></div>
+      </section>
     
 
      <!-- =================================== FOOTER SECTION =========================================  -->

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" href="./assets/images/Logo.png" type="image/png">
+
+  <title>EVO TECH STUDIO</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+
+  <link rel="stylesheet" href="./assets/css/about.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/service.css">
+  <link rel="stylesheet" href="./assets/css/portfolio.css">
+  <link rel="stylesheet" href="./assets/css/contact.css">
+
+
+</head>
+
+<body>
+
+
+  <!-- =================================== NAVBAR SECTION =========================================  -->
+
+  <nav class="evo-navbar">
+    <div class="evo-navbar__container">
+      <!-- Logo -->
+      <a href="./index.html" class="evo-navbar__logo">
+        <img src="./assets/images/Logo.png" alt="EVO TECH STUDIO" />
+      </a>
+
+      <!-- Main Navigation -->
+      <div class="evo-navbar__menu">
+        <ul class="evo-navbar__links">
+          <li class="evo-navbar__item">
+            <a href="./index.html" class="evo-navbar__link">
+              <span class="evo-navbar__link-text">Home</span>
+              <span class="evo-navbar__link-indicator"></span>
+            </a>
+          </li>
+          <li class="evo-navbar__item">
+            <a href="./about.html" class="evo-navbar__link">
+              <span class="evo-navbar__link-text">About us</span>
+              <span class="evo-navbar__link-indicator"></span>
+            </a>
+          </li>
+          <li class="evo-navbar__item">
+            <a href="./service.html" class="evo-navbar__link">
+              <span class="evo-navbar__link-text">Service</span>
+              <span class="evo-navbar__link-indicator"></span>
+            </a>
+          </li>
+          <li class="evo-navbar__item">
+            <a href="./portfolio.html" class="evo-navbar__link">
+              <span class="evo-navbar__link-text">Portfolio</span>
+              <span class="evo-navbar__link-indicator"></span>
+            </a>
+          </li>
+          <li class="evo-navbar__item">
+            <a href="./contact.html" class="evo-navbar__link evo-navbar__link--active">
+              <span class="evo-navbar__link-text">Contact</span>
+              <span class="evo-navbar__link-indicator"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="evo-navbar__cta">
+        <button class="evo-btn">
+          <span class="evo-btn__gradient-bg"></span>
+          <span class="evo-btn__text">Get a Quote</span>
+          <span class="evo-btn__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </span>
+        </button>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="evo-navbar__toggle" type="button" aria-label="Toggle menu">
+        <span class="evo-navbar__toggle-line"></span>
+        <span class="evo-navbar__toggle-line"></span>
+        <span class="evo-navbar__toggle-line"></span>
+      </button>
+
+      <!-- Mobile Menu -->
+      <div class="evo-mobile-menu">
+        <div class="evo-mobile-menu__header">
+          <!-- <h3 class="evo-mobile-menu__title">EVO TECH STUDIO</h3> -->
+          <button class="evo-mobile-menu__close" aria-label="Close menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="evo-mobile-menu__body">
+          <ul class="evo-mobile-menu__links">
+            <li class="evo-mobile-menu__item">
+              <a href="./index.html" class="evo-mobile-menu__link">Home</a>
+            </li>
+            <li class="evo-mobile-menu__item">
+              <a href="./about.html" class="evo-mobile-menu__link">About us</a>
+            </li>
+            <li class="evo-mobile-menu__item">
+              <a href="./service.html" class="evo-mobile-menu__link">Service</a>
+            </li>
+            <li class="evo-mobile-menu__item">
+              <a href="./portfolio.html" class="evo-mobile-menu__link">Portfolio</a>
+            </li>
+            <li class="evo-mobile-menu__item">
+              <a href="./contact.html" class="evo-mobile-menu__link evo-mobile-menu__link--active">Contact</a>
+            </li>
+          </ul>
+          <div class="evo-mobile-menu__cta">
+            <button class="evo-btn evo-btn--mobile">
+              <span class="evo-btn__gradient-bg"></span>
+              <span class="evo-btn__text">Get a Quote</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =================================== HERO SECTION =========================================  -->
+
+  <section class="about-hero-container">
+    <!-- Animated Background -->
+    <div class="wave-bg">
+      <div class="wave"></div>
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
+
+    <!-- Floating Shapes -->
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="hero-content">
+      <h1 class="hero-title">Contact</h1>
+      <div class="breadcrumb">
+        <a href="./index.html">
+          <i class="fa fa-home"></i>
+          <span>Home</span>
+        </a>
+        <div class="current">
+          <i class="fa-regular fa-circle-dot"></i>
+          <span>Contact</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CONTACT SECTION =========================== -->
+
+
+
+
+  <div class="container py-5">
+    <div class="glass-container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <!-- Section Title with Animation -->
+          <div class="showcase-header" data-animation="fade-up">
+            <h2 class="showcase-title">Contact</h2>
+            <p class="showcase-subtitle">We deliver exceptional digital solutions tailored to your business needs</p>
+          </div>
+
+          <!-- Modern Contact Card -->
+          <div class="nx-contact-card" data-aos="zoom-in" data-aos-delay="300">
+            <!-- Card Header -->
+            <div class="nx-header">
+              <div class="nx-header-content">
+                <h1>Get In Touch</h1>
+                <p>Our team is ready to help you with any questions or inquiries you may have.</p>
+              </div>
+            </div>
+
+            <!-- Card Body -->
+            <div class="row g-0">
+              <!-- Form Section -->
+              <div class="col-lg-7 nx-form-section">
+                <div class="form-shape"></div>
+                <form id="nxContactForm" class="needs-validation" novalidate>
+                  <!-- Name Input -->
+                  <div class="nx-floating-input" data-aos="fade-up" data-aos-delay="400">
+                    <input type="text" class="nx-form-control" id="nxFullName" placeholder=" " required>
+                    <label for="nxFullName" class="nx-form-label">Full Name</label>
+                    <div class="nx-invalid-feedback">Please enter your name</div>
+                  </div>
+
+                  <!-- Email Input -->
+                  <div class="nx-floating-input" data-aos="fade-up" data-aos-delay="500">
+                    <input type="email" class="nx-form-control" id="nxEmail" placeholder=" " required>
+                    <label for="nxEmail" class="nx-form-label">Work Email</label>
+                    <div class="nx-invalid-feedback">Please enter a valid email address</div>
+                  </div>
+
+                  <!-- Phone Input -->
+                  <div class="nx-floating-input" data-aos="fade-up" data-aos-delay="600">
+                    <input type="tel" class="nx-form-control" id="nxPhone" placeholder=" ">
+                    <label for="nxPhone" class="nx-form-label">Phone Number (Optional)</label>
+                  </div>
+
+                  <!-- Service Selection -->
+                  <div class="nx-floating-input" data-aos="fade-up" data-aos-delay="700">
+                    <select class="nx-form-control" id="nxService" required>
+                      <option value="" selected>Service Interested In</option>
+                      <option value="web-design">Web Design</option>
+                      <option value="web-development">Web Development</option>
+                      <option value="mobile-app">Mobile App Development</option>
+                      <option value="consulting">Consulting</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <!-- <label for="nxService" class="nx-form-label">Service Interested In</label> -->
+                    <div class="nx-invalid-feedback">Please select a service</div>
+                  </div>
+
+                  <!-- Message Input -->
+                  <div class="nx-floating-input" data-aos="fade-up" data-aos-delay="800">
+                    <textarea class="nx-form-control" id="nxMessage" placeholder=" " rows="5" required></textarea>
+                    <label for="nxMessage" class="nx-form-label">Your Message</label>
+                    <div class="nx-invalid-feedback">Please enter your message</div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div data-aos="fade-up" data-aos-delay="900">
+                    <button type="submit" class="nx-btn-gradient" id="nxSubmitBtn">
+                      <span>Send Message</span>
+                      <i class="fas fa-paper-plane nx-animated-icon nx-icon-pulse"></i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Info Section -->
+              <div class="col-lg-5 nx-info-section">
+                <div class="info-shape"></div>
+                <h2 class="nx-info-title" data-aos="fade-up">Contact Information</h2>
+
+                <!-- Contact Cards -->
+                <div class="nx-info-card" data-aos="fade-up" data-aos-delay="400">
+                  <div class="nx-info-icon">
+                    <i class="fas fa-map-marker-alt nx-animated-icon nx-icon-bounce"></i>
+                  </div>
+                  <div class="nx-info-content">
+                    <h3>Our Location</h3>
+                    <p>123 Innovation Street, Tech Valley, CA 94103</p>
+                  </div>
+                </div>
+
+                <div class="nx-info-card" data-aos="fade-up" data-aos-delay="500">
+                  <div class="nx-info-icon">
+                    <i class="fas fa-phone-alt nx-animated-icon nx-icon-shake"></i>
+                  </div>
+                  <div class="nx-info-content">
+                    <h3>Phone</h3>
+                    <p>+1 (555) 123-4567</p>
+                  </div>
+                </div>
+
+                <div class="nx-info-card" data-aos="fade-up" data-aos-delay="600">
+                  <div class="nx-info-icon">
+                    <i class="fas fa-envelope nx-animated-icon nx-icon-pulse"></i>
+                  </div>
+                  <div class="nx-info-content">
+                    <h3>Email</h3>
+                    <p>hello@yourcompany.com</p>
+                  </div>
+                </div>
+
+                <div class="nx-info-card" data-aos="fade-up" data-aos-delay="700">
+                  <div class="nx-info-icon">
+                    <i class="fas fa-clock nx-animated-icon nx-icon-bounce"></i>
+                  </div>
+                  <div class="nx-info-content">
+                    <h3>Business Hours</h3>
+                    <p>Mon-Fri: 9AM to 5PM</p>
+                  </div>
+                </div>
+
+                <!-- Interactive Map -->
+                <!-- <div class="nx-map" data-aos="fade-up" data-aos-delay="800">
+                  <div class="nx-map-placeholder">
+                    <div class="nx-marker-pulse"></div>
+                    <div class="nx-map-marker">
+                      <i class="fas fa-map-marker-alt fa-2x" style="color: var(--nx-blue);"></i>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Bar -->
+          <div class="row mt-4 justify-content-center" data-aos="fade-up" data-aos-delay="900">
+            <div class="col-md-8 text-center">
+              <p class="mb-3" style="color: var(--nx-text-light);">Connect with us on social media</p>
+              <div class="d-flex justify-content-center gap-4">
+                <a href="#" class="btn btn-lg rounded-circle" style="background: var(--nx-gradient); color: white;">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="btn btn-lg rounded-circle" style="background: var(--nx-gradient); color: white;">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="btn btn-lg rounded-circle" style="background: var(--nx-gradient); color: white;">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="btn btn-lg rounded-circle" style="background: var(--nx-gradient); color: white;">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="nx-toast-container">
+    <div class="nx-toast" id="nxToast">
+      <div class="nx-toast-body">
+        <div class="nx-toast-icon">
+          <i class="fas fa-check"></i>
+        </div>
+        <div>
+          <strong>Thank you!</strong> Your message has been sent successfully.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter Subscription -->
+  <div class="container mb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="glass-container py-4" data-aos="fade-up">
+          <div class="text-center px-3">
+            <h3 style="font-weight: 700; color: var(--nx-text);">Stay Updated</h3>
+            <p class="mb-4" style="color: var(--nx-text-light);">Subscribe to our newsletter for the latest updates and
+              offers</p>
+
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <form id="newsletterForm" class="d-flex flex-column flex-md-row gap-3">
+                  <div class="position-relative flex-grow-1">
+                    <input type="email" class="form-control rounded-pill py-3 px-4" placeholder="Enter your email"
+                      required style="border: 2px solid var(--nx-border); box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                  </div>
+                  <button type="submit" class="btn rounded-pill py-3 px-4"
+                    style="background: var(--nx-gradient); color: white; font-weight: 600; box-shadow: 0 5px 15px rgba(5,12,156,0.2);">
+                    Subscribe <i class="fas fa-arrow-right ms-2"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =================================== FOOTER SECTION =========================================  -->
+  <section class=" bg-white">
+    <div class="container shine-cta-wrapper mt-5 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="shine-cta">
+            <!-- Floating Elements -->
+            <div class="shine-cta__floating-elements">
+              <div class="floating-element"></div>
+              <div class="floating-element"></div>
+              <div class="floating-element"></div>
+              <div class="floating-element"></div>
+            </div>
+
+            <!-- Glow Effects -->
+            <div class="shine-cta__glow"></div>
+            <div class="shine-cta__glow"></div>
+
+            <div class="shine-cta__content">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-xl-8">
+                  <h2 class="shine-cta__title">Ready to build something great?</h2>
+                  <button class="shine-cta__btn" id="consultationBtn">
+                    <span class="shine-cta__btn-text">
+                      Book a Free Consultation
+                      <svg class="shine-cta__btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-4 mb-4">
+          <div class="footer-brand">EVOTECH.STUDIO</div>
+          <div class="footer-tagline">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum
+            facilis natus. Asperiores cum magnam iure delectus omnis quos, sapiente ratione, corrupti minus
+            incidunt ad. Quasi officiis ducimus ut nam!</div>
+        </div>
+
+        <!-- Company Links -->
+        <div class="col-lg-2 col-md-4 mb-4">
+          <h5>Company</h5>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources Links -->
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h5>Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <!-- Connect Links -->
+        <div class="col-lg-3 col-md-4 mb-4">
+          <h5>Connect</h5>
+          <ul class="footer-links">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Dribbble</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <span>© Current Year EVOTECH.STUDIO. All Rights Reserved.</span>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer-social-icons">
+              <a href="#"><i class="bi bi-linkedin"></i></a>
+              <a href="#"><i class="bi bi-twitter-x"></i></a>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/service.js"></script>
+  <script src="./assets/js/about.js"></script>
+  <script src="./assets/js/portfolio.js"></script>
+
+</body>
+
+</html>

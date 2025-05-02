@@ -1,125 +1,304 @@
-// Portfolio Section JavaScript
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize portfolio items with animation delay
-    const portfolioItems = document.querySelectorAll('.evo-portfolio__item');
-    
-    // Initial animation for items
-    setTimeout(() => {
-      portfolioItems.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('show');
-        }, 100 * index);
-      });
-    }, 300);
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize AOS animation library
+  AOS.init();
   
-    // Filter functionality
-    const filterButtons = document.querySelectorAll('.evo-portfolio__filter-btn');
-    
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => {
-          btn.classList.remove('active');
-        });
-        
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        // Get filter value
-        const filterValue = this.getAttribute('data-filter');
-        
-        // Filter items
-        filterPortfolioItems(filterValue);
+  // Portfolio Filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach(btn => {
+        btn.classList.remove('active');
       });
-    });
-    
-    // Filter items function
-    function filterPortfolioItems(category) {
+      
+      // Add active class to clicked button
+      btn.classList.add('active');
+      
+      // Get filter value
+      const filterValue = btn.getAttribute('data-filter');
+      
+      // Filter portfolio items
       portfolioItems.forEach(item => {
-        // First hide all items and remove show class for re-animation
-        item.classList.remove('show');
-        item.style.display = 'none';
-        
-        // Get item category
-        const itemCategory = item.getAttribute('data-category');
-        
-        // Show items based on category
-        if (category === 'all' || category === itemCategory) {
+        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+          item.style.display = 'block';
           setTimeout(() => {
-            item.style.display = 'block';
-            
-            // Re-trigger animation after a tiny delay
-            setTimeout(() => {
-              item.classList.add('show');
-            }, 50);
-          }, 300); // Small delay for smooth transition
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
         }
-      });
-    }
-  
-    // Load more button functionality (simulation)
-    const loadMoreBtn = document.querySelector('.evo-portfolio__load-more');
-    
-    if (loadMoreBtn) {
-      loadMoreBtn.addEventListener('click', function() {
-        // Change button text to loading
-        this.innerHTML = '<span class="evo-portfolio__btn-text">Loading...</span><span class="evo-portfolio__btn-icon"><i class="bi bi-arrow-repeat spin"></i></span>';
-        
-        // Simulate loading new content
-        setTimeout(() => {
-          // Reset button text
-          this.innerHTML = '<span class="evo-portfolio__btn-text">Load More Projects</span><span class="evo-portfolio__btn-icon"><i class="bi bi-arrow-down-circle"></i></span>';
-          
-          // Here you would normally fetch more items
-          // For demo purposes, just show an alert
-          alert('In a real application, this would load more portfolio items from your database.');
-        }, 1500);
-      });
-    }
-  
-    // Add scroll animation for portfolio cards
-    window.addEventListener('scroll', revealOnScroll);
-    
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
-      const revealPoint = 150;
-      
-      portfolioItems.forEach(item => {
-        const itemTop = item.getBoundingClientRect().top;
-        
-        if (itemTop < windowHeight - revealPoint) {
-          item.classList.add('show');
-        }
-      });
-    }
-  
-    // Parallax effect for floating elements
-    const floatingElements = document.querySelectorAll('.evo-portfolio__float-item');
-    
-    window.addEventListener('mousemove', (e) => {
-      const x = e.clientX / window.innerWidth;
-      const y = e.clientY / window.innerHeight;
-      
-      floatingElements.forEach((el, index) => {
-        // Different movement factors for each element
-        const moveFactor = 20 + (index * 5);
-        
-        el.style.transform = `translate(${x * moveFactor}px, ${y * moveFactor}px) rotate(${x * 10}deg)`;
-      });
-    });
-  
-    // Initialize hover effect for cards
-    const portfolioCards = document.querySelectorAll('.evo-portfolio__card');
-    
-    portfolioCards.forEach(card => {
-      card.addEventListener('mouseenter', function(e) {
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        this.style.setProperty('--mouse-x', `${x}px`);
-        this.style.setProperty('--mouse-y', `${y}px`);
       });
     });
   });
+  
+  // Modal Functionality
+  const viewBtns = document.querySelectorAll('.view-btn');
+  const projectModal = document.getElementById('projectModal');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const modalCloseBtn = document.querySelector('.modal-close-btn');
+  
+  // Open modal
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const portfolioItem = btn.closest('.portfolio-item');
+      const title = portfolioItem.querySelector('.portfolio-title').textContent;
+      const category = portfolioItem.querySelector('.category-badge').textContent;
+      const imgSrc = portfolioItem.querySelector('.portfolio-img').src;
+      
+      // Update modal content
+      document.querySelector('.modal-title').textContent = title;
+      document.querySelector('.modal-category').textContent = category;
+      document.getElementById('modalImage').src = imgSrc;
+      
+      // Show modal with animation
+      projectModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close modal
+  modalCloseBtn.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
+  
+  function closeModal() {
+    projectModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Load more button functionality (for demo purposes)
+  const loadMoreBtn = document.querySelector('.load-more-btn');
+  let clickCount = 0;
+  
+  loadMoreBtn.addEventListener('click', () => {
+    clickCount++;
+    
+    if (clickCount === 1) {
+      loadMoreBtn.classList.add('loading');
+      loadMoreBtn.querySelector('.btn-text').textContent = 'Loading...';
+      
+      // Simulate loading delay
+      setTimeout(() => {
+        loadMoreBtn.classList.remove('loading');
+        loadMoreBtn.querySelector('.btn-text').textContent = 'No More Projects';
+        loadMoreBtn.querySelector('.btn-icon i').className = 'fa-solid fa-check';
+        loadMoreBtn.disabled = true;
+      }, 1500);
+    }
+  });
+});
+
+
+
+
+// Portfolio Section JavaScript
+document.addEventListener("DOMContentLoaded", function() {
+  // Initialize AOS animation library if not already initialized
+  if (typeof AOS !== 'undefined' && AOS) {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+      offset: 50
+    });
+  }
+  
+  // Portfolio items data (for demo purposes)
+  const portfolioData = [
+    {
+      id: 1,
+      title: "E-commerce Platform",
+      description: "A full-featured online store with integrated payment solutions",
+      category: "Web Development",
+      image: "/api/placeholder/600/400",
+      client: "Fashion Retailer",
+      duration: "3 months",
+      completedDate: "January 2025",
+      technologies: ["HTML5", "CSS3", "JavaScript", "React", "Node.js"],
+      overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+      id: 2,
+      title: "Fitness Tracking App",
+      description: "iOS and Android app for tracking workouts and health metrics",
+      category: "Mobile App",
+      image: "/api/placeholder/600/400",
+      client: "Health & Fitness Brand",
+      duration: "4 months",
+      completedDate: "December 2024",
+      technologies: ["React Native", "Firebase", "Redux", "Node.js"],
+      overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    // Add more portfolio items as needed
+  ];
+  
+  // Portfolio Filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Remove active class from all buttons
+      filterBtns.forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Add active class to clicked button
+      btn.classList.add('active');
+      
+      // Get filter value
+      const filterValue = btn.getAttribute('data-filter');
+      
+      // Filter portfolio items with animation
+      portfolioItems.forEach(item => {
+        if (filterValue === 'all' || item.classList.contains(filterValue)) {
+          item.style.display = 'block';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.8)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
+        }
+      });
+    });
+  });
+  
+  // Modal Functionality
+  const viewBtns = document.querySelectorAll('.view-btn');
+  const projectModal = document.getElementById('projectModal');
+  const modalOverlay = document.querySelector('.modal-overlay');
+  const modalCloseBtn = document.querySelector('.modal-close-btn');
+  
+  // Open modal
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const portfolioItem = btn.closest('.portfolio-item');
+      const portfolioTitle = portfolioItem.querySelector('.portfolio-title').textContent;
+      const portfolioCategory = portfolioItem.querySelector('.category-badge').textContent;
+      const portfolioImgSrc = portfolioItem.querySelector('.portfolio-img').src;
+      
+      // Find portfolio data (in a real application, you'd fetch this from a database)
+      const itemData = portfolioData.find(item => item.title === portfolioTitle) || {
+        client: "Client Name",
+        duration: "3 months",
+        completedDate: "January 2025",
+        technologies: ["HTML5", "CSS3", "JavaScript", "React", "Node.js"],
+        overview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      };
+      
+      // Update modal content
+      document.querySelector('.modal-title').textContent = portfolioTitle;
+      document.querySelector('.modal-category').textContent = portfolioCategory;
+      document.getElementById('modalImage').src = portfolioImgSrc;
+      document.getElementById('modalClient').textContent = itemData.client;
+      document.getElementById('modalDuration').textContent = itemData.duration;
+      document.getElementById('modalDate').textContent = itemData.completedDate;
+      
+      // Update technologies
+      const techStack = document.querySelector('.tech-stack');
+      techStack.innerHTML = '';
+      itemData.technologies.forEach(tech => {
+        const techBadge = document.createElement('span');
+        techBadge.classList.add('tech-badge');
+        techBadge.textContent = tech;
+        techStack.appendChild(techBadge);
+      });
+      
+      // Show modal with animation
+      projectModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  
+  // Close modal
+  modalCloseBtn.addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+  
+  function closeModal() {
+    projectModal.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Load more button functionality (for demo purposes)
+  const loadMoreBtn = document.querySelector('.load-more-btn');
+  let clickCount = 0;
+  
+  loadMoreBtn.addEventListener('click', () => {
+    clickCount++;
+    
+    if (clickCount === 1) {
+      loadMoreBtn.classList.add('loading');
+      loadMoreBtn.querySelector('.btn-text').textContent = 'Loading...';
+      loadMoreBtn.querySelector('.btn-icon i').className = 'fa-solid fa-spinner';
+      
+      // Simulate loading delay
+      setTimeout(() => {
+        loadMoreBtn.classList.remove('loading');
+        loadMoreBtn.querySelector('.btn-text').textContent = 'No More Projects';
+        loadMoreBtn.querySelector('.btn-icon i').className = 'fa-solid fa-check';
+        loadMoreBtn.disabled = true;
+      }, 1500);
+    }
+  });
+  
+  // Animate portfolio cards on scroll if AOS is not used
+  if (typeof AOS === 'undefined') {
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    portfolioCards.forEach(card => {
+      observer.observe(card);
+    });
+  }
+  
+  // Link buttons functionality
+  const linkBtns = document.querySelectorAll('.link-btn');
+  linkBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const portfolioTitle = btn.closest('.portfolio-item').querySelector('.portfolio-title').textContent;
+      window.open('#', '_blank'); // Replace with actual project URL
+    });
+  });
+  
+  // Initialize hover effects for touch devices
+  if ('ontouchstart' in window) {
+    const portfolioCards = document.querySelectorAll('.portfolio-card');
+    portfolioCards.forEach(card => {
+      card.addEventListener('touchstart', function() {
+        // Remove active class from all cards
+        portfolioCards.forEach(c => c.classList.remove('touch-active'));
+        // Add active class to current card
+        this.classList.add('touch-active');
+      });
+    });
+  }
+});

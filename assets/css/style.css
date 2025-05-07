@@ -73,6 +73,16 @@
   }
 }
 
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+
+
 /* Updated Main Contact Button Style */
 .main-contact-btn {
   background: var(--gradient);
@@ -84,11 +94,12 @@
   font-size: 24px;
   cursor: pointer;
   position: relative;
-  animation: strongGlowPulse 2s infinite ease-in-out;
-  box-shadow:
-    0 0 15px 3px rgba(58, 190, 249, 0.5),
-    0 0 30px 8px rgba(58, 190, 249, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulseScale 1.4s infinite ease-in-out;
 }
+
 
 
 .main-contact-btn.rotate {

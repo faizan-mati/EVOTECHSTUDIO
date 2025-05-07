@@ -420,6 +420,57 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-// ============================= PROJECT SECTION ===================================
+// ============================= FLOTING ICON SECTION ===================================
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const fabContainer = document.querySelector('.fab-container');
+  const fabMain = document.querySelector('.fab-main');
+  
+  // Toggle active state
+  fabMain.addEventListener('click', function() {
+      fabContainer.classList.toggle('active');
+      
+      // Remove pulse animation when opened
+      if (fabContainer.classList.contains('active')) {
+          fabMain.classList.remove('fab-pulse');
+      } else {
+          // Add pulse back when closed after a delay
+          setTimeout(() => {
+              fabMain.classList.add('fab-pulse');
+          }, 1000);
+      }
+  });
+  
+  // Close when clicking outside
+  document.addEventListener('click', function(event) {
+      if (!fabContainer.contains(event.target) && fabContainer.classList.contains('active')) {
+          fabContainer.classList.remove('active');
+          
+          // Add pulse back when closed
+          setTimeout(() => {
+              fabMain.classList.add('fab-pulse');
+          }, 1000);
+      }
+  });
+  
+  // Add ripple effect to buttons
+  const rippleButtons = document.querySelectorAll('.ripple');
+  rippleButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+          const x = e.clientX - e.target.getBoundingClientRect().left;
+          const y = e.clientY - e.target.getBoundingClientRect().top;
+          
+          const ripple = document.createElement('span');
+          ripple.style.left = `${x}px`;
+          ripple.style.top = `${y}px`;
+          ripple.className = 'ripple-effect';
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+              ripple.remove();
+          }, 600);
+      });
+  });
+});

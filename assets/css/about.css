@@ -301,7 +301,7 @@ body {
     position: relative;
     margin-bottom: 3rem;
     font-weight: 700;
-    /* color: ; */
+    color: var(--navy);
 }
 
 .mission-title-bar {

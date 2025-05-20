@@ -1894,13 +1894,13 @@
     color: var(--white);
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     position: relative;
     display: inline-block;
 }
 
 .shine-cta__title::after {
-    content: '';
+    /* content: '';
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -1908,7 +1908,7 @@
     width: 60px;
     height: 3px;
     background: var(--light-blue);
-    border-radius: 3px;
+    border-radius: 3px; */
 }
 
 .shine-cta__btn {
@@ -2051,7 +2051,7 @@
 
 .footer-brand {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 10px;
 }
 
@@ -2113,12 +2113,6 @@
     background-color: #f8f9fa;
     padding: 50px 0 20px;
     color: #333;
-}
-
-.footer-brand {
-    font-weight: 700;
-    font-size: 20px;
-    margin-bottom: 10px;
 }
 
 .footer-tagline {

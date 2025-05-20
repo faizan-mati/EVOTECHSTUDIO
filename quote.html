@@ -34,7 +34,7 @@
 
   <!-- =================================== NAVBAR SECTION =========================================  -->
 
- <nav class="evo-navbar">
+  <nav class="evo-navbar">
     <div class="evo-navbar__container">
       <!-- Logo -->
       <a href="./index.html" class="evo-navbar__logo">
@@ -81,7 +81,8 @@
       <div class="evo-navbar__cta">
         <button class="evo-btn">
           <span class="evo-btn__gradient-bg"></span>
-          <span class="evo-btn__text"><a href="./quote.html" style="color: inherit; text-decoration: none;">Get a Quote </a></span>
+          <span class="evo-btn__text"><a href="./quote.html" style="color: inherit; text-decoration: none;">Get a Quote
+            </a></span>
           <span class="evo-btn__icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -130,7 +131,8 @@
           <div class="evo-mobile-menu__cta">
             <button class="evo-btn evo-btn--mobile">
               <span class="evo-btn__gradient-bg"></span>
-              <span class="evo-btn__text"><a href="./quote.html" style="color: inherit; text-decoration: none;">Get a Quote </a></span>
+              <span class="evo-btn__text"><a href="./quote.html" style="color: inherit; text-decoration: none;">Get a
+                  Quote </a></span>
             </button>
           </div>
         </div>
@@ -262,19 +264,20 @@
 
               <!-- Right Form -->
               <div class="col-lg-7 quote-card__form-panel">
-                <form class="quote-form">
+                <form class="quote-form" action="https://formspree.io/f/myzwvlnp" method="POST">
+                  <!-- Your Information -->
                   <div class="quote-form__group">
                     <h3 class="quote-form__section-title">Your Information</h3>
                     <div class="row">
                       <div class="col-md-6">
                         <div class="quote-form__input-wrap">
-                          <input type="text" class="quote-form__input" id="name" required>
+                          <input type="text" class="quote-form__input" id="name" name="Full Name" required>
                           <label for="name" class="quote-form__label">Full Name</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="quote-form__input-wrap">
-                          <input type="email" class="quote-form__input" id="email" required>
+                          <input type="email" class="quote-form__input" id="email" name="Email" required>
                           <label for="email" class="quote-form__label">Email Address</label>
                         </div>
                       </div>
@@ -282,13 +285,13 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="quote-form__input-wrap">
-                          <input type="tel" class="quote-form__input" id="phone">
+                          <input type="tel" class="quote-form__input" id="phone" name="Phone">
                           <label for="phone" class="quote-form__label">Phone Number</label>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="quote-form__input-wrap">
-                          <input type="text" class="quote-form__input" id="company">
+                          <input type="text" class="quote-form__input" id="company" name="Company">
                           <label for="company" class="quote-form__label">Company (Optional)</label>
                         </div>
                       </div>
@@ -297,96 +300,113 @@
 
                   <div class="quote-form__divider"></div>
 
+                  <!-- Project Details -->
                   <div class="quote-form__group">
                     <h3 class="quote-form__section-title">Project Details</h3>
+
+                    <!-- Services -->
                     <div class="quote-form__service-selection">
                       <p class="quote-form__label-static">Services You Need (Select all that apply)</p>
                       <div class="row">
                         <div class="col-md-4">
                           <div class="quote-form__checkbox-wrap">
-                            <input type="checkbox" id="web-dev" class="quote-form__checkbox">
+                            <input type="checkbox" id="web-dev" name="Services[]" value="Web Development"
+                              class="quote-form__checkbox">
                             <label for="web-dev" class="quote-form__checkbox-label">Web Development</label>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="quote-form__checkbox-wrap">
-                            <input type="checkbox" id="ui-design" class="quote-form__checkbox">
+                            <input type="checkbox" id="ui-design" name="Services[]" value="UI/UX Design"
+                              class="quote-form__checkbox">
                             <label for="ui-design" class="quote-form__checkbox-label">UI/UX Design</label>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="quote-form__checkbox-wrap">
-                            <input type="checkbox" id="ecommerce" class="quote-form__checkbox">
+                            <input type="checkbox" id="ecommerce" name="Services[]" value="E-Commerce"
+                              class="quote-form__checkbox">
                             <label for="ecommerce" class="quote-form__checkbox-label">E-Commerce</label>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="quote-form__checkbox-wrap">
-                            <input type="checkbox" id="branding" class="quote-form__checkbox">
+                            <input type="checkbox" id="branding" name="Services[]" value="Branding"
+                              class="quote-form__checkbox">
                             <label for="branding" class="quote-form__checkbox-label">Branding</label>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="quote-form__checkbox-wrap">
-                            <input type="checkbox" id="digital-marketing" class="quote-form__checkbox">
+                            <input type="checkbox" id="digital-marketing" name="Services[]" value="Digital Marketing"
+                              class="quote-form__checkbox">
                             <label for="digital-marketing" class="quote-form__checkbox-label">Digital Marketing</label>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="quote-form__checkbox-wrap">
-                            <input type="checkbox" id="other-service" class="quote-form__checkbox">
+                            <input type="checkbox" id="other-service" name="Services[]" value="Other"
+                              class="quote-form__checkbox">
                             <label for="other-service" class="quote-form__checkbox-label">Other</label>
                           </div>
                         </div>
                       </div>
                     </div>
 
+                    <!-- Budget -->
                     <div class="quote-form__budget">
                       <p class="quote-form__label-static">Estimated Budget</p>
                       <div class="quote-form__radio-group">
                         <div class="quote-form__radio-wrap">
-                          <input type="radio" name="budget" id="budget-1" class="quote-form__radio">
+                          <input type="radio" name="Budget" id="budget-1" value="$1,000 - $5,000"
+                            class="quote-form__radio">
                           <label for="budget-1" class="quote-form__radio-label">$1,000 - $5,000</label>
                         </div>
                         <div class="quote-form__radio-wrap">
-                          <input type="radio" name="budget" id="budget-2" class="quote-form__radio">
+                          <input type="radio" name="Budget" id="budget-2" value="$5,000 - $10,000"
+                            class="quote-form__radio">
                           <label for="budget-2" class="quote-form__radio-label">$5,000 - $10,000</label>
                         </div>
                         <div class="quote-form__radio-wrap">
-                          <input type="radio" name="budget" id="budget-3" class="quote-form__radio">
+                          <input type="radio" name="Budget" id="budget-3" value="$10,000 - $25,000"
+                            class="quote-form__radio">
                           <label for="budget-3" class="quote-form__radio-label">$10,000 - $25,000</label>
                         </div>
                         <div class="quote-form__radio-wrap">
-                          <input type="radio" name="budget" id="budget-4" class="quote-form__radio">
+                          <input type="radio" name="Budget" id="budget-4" value="$25,000+" class="quote-form__radio">
                           <label for="budget-4" class="quote-form__radio-label">$25,000+</label>
                         </div>
                       </div>
                     </div>
 
+                    <!-- Timeline -->
                     <div class="quote-form__timeline">
                       <div class="quote-form__input-wrap">
-                        <select class="quote-form__select" id="timeline" required>
+                        <select class="quote-form__select" id="timeline" name="Timeline" required>
                           <option value="" disabled selected></option>
-                          <option value="urgent">As soon as possible</option>
-                          <option value="1month">Within 1 month</option>
-                          <option value="3months">Within 3 months</option>
-                          <option value="flexible">Flexible</option>
+                          <option value="As soon as possible">As soon as possible</option>
+                          <option value="Within 1 month">Within 1 month</option>
+                          <option value="Within 3 months">Within 3 months</option>
+                          <option value="Flexible">Flexible</option>
                         </select>
                         <label for="timeline" class="quote-form__label">Expected Timeline</label>
                       </div>
                     </div>
 
+                    <!-- Project Description -->
                     <div class="quote-form__input-wrap quote-form__textarea-wrap">
-                      <textarea class="quote-form__textarea" id="project-details" rows="4" required></textarea>
+                      <textarea class="quote-form__textarea" id="project-details" name="Project Description" rows="4"
+                        required></textarea>
                       <label for="project-details" class="quote-form__label">Project Description</label>
                     </div>
                   </div>
 
+                  <!-- Submit Button -->
                   <div class="quote-form__submit-container">
                     <button type="submit" class="quote-form__submit">
                       <span class="quote-form__submit-text">Submit Request</span>
                       <span class="quote-form__submit-icon">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                           <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
@@ -394,6 +414,8 @@
                     </button>
                   </div>
                 </form>
+
+
               </div>
             </div>
           </div>
@@ -488,7 +510,7 @@
   <section class="faq-section">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
-         <h2 class="quote-section-title ">Frequently Asked Questions
+        <h2 class="quote-section-title ">Frequently Asked Questions
           <div class="about-title-bar mt-2"></div>
         </h2>
         <div class="section-subtitle">Get answers to common questions about our process</div>
@@ -585,7 +607,7 @@
   <section class="client-logos">
     <div class="container">
       <div class="client-logos__content" data-aos="fade-up">
-       <h2 class="quote-section-title mb-5">Trusted by Businesses Worldwide
+        <h2 class="quote-section-title mb-5">Trusted by Businesses Worldwide
           <div class="about-title-bar mt-2"></div>
         </h2>
 
@@ -679,7 +701,7 @@
   </div>
 
 
-    <footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="row">
 

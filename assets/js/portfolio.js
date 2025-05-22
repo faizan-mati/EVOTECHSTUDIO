@@ -45,32 +45,43 @@ document.addEventListener("DOMContentLoaded", function() {
   const modalCloseBtn = document.querySelector('.modal-close-btn');
   
   // Open modal
-  viewBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const portfolioItem = btn.closest('.portfolio-item');
-      const title = portfolioItem.querySelector('.portfolio-title').textContent;
+viewBtns.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    const portfolioItem = btn.closest('.portfolio-item');
+    const title = portfolioItem.querySelector('.portfolio-title').textContent;
+
+    // Show the second modal only for the second card (you can use index or title or any other unique marker)
+    if (title === "Fitness Tracking App") {
+      document.getElementById('projectModal2').classList.add('active');
+    } else {
       const category = portfolioItem.querySelector('.category-badge').textContent;
       const imgSrc = portfolioItem.querySelector('.portfolio-img').src;
-      
+
       // Update modal content
       document.querySelector('.modal-title').textContent = title;
       document.querySelector('.modal-category').textContent = category;
       document.getElementById('modalImage').src = imgSrc;
-      
-      // Show modal with animation
-      projectModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
+
+      document.getElementById('projectModal').classList.add('active');
+    }
+
+    document.body.style.overflow = 'hidden';
   });
+});
   
   // Close modal
-  modalCloseBtn.addEventListener('click', closeModal);
-  modalOverlay.addEventListener('click', closeModal);
-  
-  function closeModal() {
-    projectModal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
+function closeModal() {
+  document.getElementById('projectModal').classList.remove('active');
+  document.getElementById('projectModal2').classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Same close logic
+document.querySelectorAll('.modal-close-btn').forEach(btn => btn.addEventListener('click', closeModal));
+document.querySelectorAll('.modal-overlay').forEach(overlay => overlay.addEventListener('click', closeModal));
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeModal();
+});
   
   // Load more button functionality (for demo purposes)
   const loadMoreBtn = document.querySelector('.load-more-btn');
@@ -302,3 +313,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+
+

@@ -143,7 +143,20 @@ document.addEventListener("DOMContentLoaded", function () {
       completedDate: "Meal planning tools",
       technologies: ["FIGMA"],
       overview: " A clean and modern mobile recipe discovery platform that helps users find, save, and organize cooking recipes through an intuitive interface. The app features comprehensive recipe collections, detailed ingredient lists, step-by-step cooking instructions, and meal planning tools, making it easy for home cooks and food enthusiasts to discover new dishes and streamline their culinary journey."
+    },
+     {
+      id: 4,
+      title: "E-commerce Website",
+      description: "",
+      category: "Web Development",
+      image: "./assets/images/project/web/e-commerce.png",
+      client: "Fully responsive design for all devices",
+      duration: "Product catalog with search and filtering",
+      completedDate: "Shopping cart and wishlist functionality",
+      technologies: ["HTML","CSS","JS"],
+      overview: "A fully responsive e-commerce platform designed to provide a seamless online shopping experience for customers. The website features comprehensive product browsing capabilities, secure shopping cart functionality, and streamlined checkout processes, enabling businesses to effectively showcase their products and facilitate smooth transactions while ensuring optimal user experience across all devices."
     }
+
     // Add more items as needed
   ];
 

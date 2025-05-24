@@ -356,10 +356,48 @@
             const message = document.getElementById('forgivenessMessage');
             message.classList.remove('hidden');
             
-            // Smooth scroll to thank you message
+            // Mobile-friendly scrolling with multiple fallbacks
             setTimeout(() => {
-                message.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }, 300);
+                // Try multiple scrolling methods for mobile compatibility
+                try {
+                    // Method 1: Modern smooth scroll
+                    message.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                } catch (e) {
+                    // Method 2: Fallback for older mobile browsers
+                    const rect = message.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetY = rect.top + scrollTop - (window.innerHeight / 2) + (rect.height / 2);
+                    
+                    // Smooth scroll animation for mobile
+                    const startY = window.pageYOffset;
+                    const distance = targetY - startY;
+                    const duration = 800;
+                    let start = null;
+                    
+                    function step(timestamp) {
+                        if (!start) start = timestamp;
+                        const progress = timestamp - start;
+                        const percentage = Math.min(progress / duration, 1);
+                        
+                        // Easing function
+                        const easeInOutCubic = percentage < 0.5 
+                            ? 4 * percentage * percentage * percentage 
+                            : (percentage - 1) * (2 * percentage - 2) * (2 * percentage - 2) + 1;
+                        
+                        window.scrollTo(0, startY + distance * easeInOutCubic);
+                        
+                        if (progress < duration) {
+                            window.requestAnimationFrame(step);
+                        }
+                    }
+                    
+                    window.requestAnimationFrame(step);
+                }
+            }, 500);
             
             // Add confetti effect
             for (let i = 0; i < 50; i++) {
@@ -374,8 +412,46 @@
             const chatSection = document.getElementById('chatSection');
             chatSection.classList.remove('hidden');
             
-            // Smooth scroll to chat section
-            chatSection.scrollIntoView({ behavior: 'smooth' });
+            // Mobile-friendly scrolling for chat section
+            setTimeout(() => {
+                try {
+                    // Method 1: Modern smooth scroll
+                    chatSection.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                } catch (e) {
+                    // Method 2: Fallback for mobile browsers
+                    const rect = chatSection.getBoundingClientRect();
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    const targetY = rect.top + scrollTop - (window.innerHeight / 2) + (rect.height / 2);
+                    
+                    // Smooth scroll animation
+                    const startY = window.pageYOffset;
+                    const distance = targetY - startY;
+                    const duration = 800;
+                    let start = null;
+                    
+                    function step(timestamp) {
+                        if (!start) start = timestamp;
+                        const progress = timestamp - start;
+                        const percentage = Math.min(progress / duration, 1);
+                        
+                        const easeInOutCubic = percentage < 0.5 
+                            ? 4 * percentage * percentage * percentage 
+                            : (percentage - 1) * (2 * percentage - 2) * (2 * percentage - 2) + 1;
+                        
+                        window.scrollTo(0, startY + distance * easeInOutCubic);
+                        
+                        if (progress < duration) {
+                            window.requestAnimationFrame(step);
+                        }
+                    }
+                    
+                    window.requestAnimationFrame(step);
+                }
+            }, 500);
             
             // More confetti for the chat reveal
             for (let i = 0; i < 30; i++) {

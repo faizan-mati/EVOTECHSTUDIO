@@ -356,6 +356,11 @@
             const message = document.getElementById('forgivenessMessage');
             message.classList.remove('hidden');
             
+            // Smooth scroll to thank you message
+            setTimeout(() => {
+                message.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+            
             // Add confetti effect
             for (let i = 0; i < 50; i++) {
                 setTimeout(() => {

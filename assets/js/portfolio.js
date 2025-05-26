@@ -108,8 +108,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Portfolio data
   const portfolioData = [
-    {
+     {
       id: 1,
+      title: "School Management System ",
+      description: "",
+      category: "Web Development",
+      image: "./assets/images/project/web/sms.png",
+      client: "Centralized dashboard for student and teacher management",
+      duration: "Automated attendance tracking and reporting",
+      completedDate: "Class-wise performance and finance analytics",
+      technologies: ["HTML", "CSS", "JAVASCRIPT", "BOOTSTRAP"],
+      overview: "A web-based School Management System designed to streamline administrative tasks such as managing student records, teacher assignments, class scheduling, and fee collection. The platform provides an intuitive dashboard for administrators to efficiently monitor and control all academic and operational activities."
+    },
+     {
+      id: 2,
       title: "Image Generation APP",
       description: "",
       category: "UI/UX",
@@ -121,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: "An AI-powered mobile application that enables users to generate, customize, and edit stunning digital artwork through an intuitive interface. The app leverages advanced artificial intelligence algorithms to transform user inputs into professional-quality illustrations, making art creation accessible to both beginners and experienced artists."
     },
     {
-      id: 2,
+      id: 3,
       title: "Emirates Visual Identity",
       description: "",
       category: "Branding",
@@ -133,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: " A comprehensive brand identity redesign for Emirates that captures the essence of luxury aviation and modern travel experience. This project involved creating a cohesive visual language that reflects Emirates' premium positioning in the airline industry, emphasizing elegance, reliability, and global connectivity through sophisticated design elements and contemporary aesthetics."
     },
     {
-      id: 3,
+      id: 4,
       title: "E-commerce Website",
       description: "",
       category: "Web Development",
@@ -145,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: "A fully responsive e-commerce platform designed to provide a seamless online shopping experience for customers. The website features comprehensive product browsing capabilities, secure shopping cart functionality, and streamlined checkout processes, enabling businesses to effectively showcase their products and facilitate smooth transactions while ensuring optimal user experience across all devices."
     },
     {
-      id: 4,
+      id: 5,
       title: "Recipe App",
       description: "",
       category: "UI/UX",
@@ -157,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: " A clean and modern mobile recipe discovery platform that helps users find, save, and organize cooking recipes through an intuitive interface. The app features comprehensive recipe collections, detailed ingredient lists, step-by-step cooking instructions, and meal planning tools, making it easy for home cooks and food enthusiasts to discover new dishes and streamline their culinary journey."
     },
     {
-      id: 5,
+      id: 6,
       title: "Youtube Dashboard",
       description: "",
       category: "UI/UX",
@@ -169,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: " A comprehensive analytics dashboard designed for YouTube content creators to monitor, analyze, and optimize their channel performance in real-time. The platform provides detailed insights into video metrics, audience engagement, growth trends, and content performance, empowering creators to make data-driven decisions to enhance their content strategy and maximize their reach."
     },
     {
-      id: 6,
+      id: 7,
       title: "NayaPay Visual Identity",
       description: "",
       category: "Branding",
@@ -181,7 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: "A modern digital banking brand identity created for NayaPay, focusing on trust, innovation, and accessibility in financial technology. The project encompasses a complete visual identity system that communicates security and user-friendliness while maintaining a contemporary fintech aesthetic that appeals to tech-savvy consumers and traditional banking customers alike."
     },
     {
-      id: 7,
+      id: 8,
       title: "Trifold Brochure",
       description: "",
       category: "Graphic",
@@ -193,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
       overview: "A comprehensive graphic design project for Hunar that focuses on creating visually compelling and culturally relevant design solutions. This project involved developing a complete visual communication system that effectively conveys the brand's message through innovative graphic elements, illustrations, and creative layouts that resonate with the target audience."
     },
     {
-      id: 8,
+      id: 9,
       title: "Trifold Brochure",
       description: "",
       category: "Graphic",

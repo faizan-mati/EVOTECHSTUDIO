@@ -442,3 +442,31 @@ toggleBtn.addEventListener("click", () => {
     icon.classList.add("fa-comment-dots");
   }
 });
+
+
+
+
+
+
+
+          // Add mouse trail effect
+        document.addEventListener('mousemove', (e) => {
+            const trail = document.createElement('div');
+            trail.style.position = 'fixed';
+            trail.style.left = e.clientX + 'px';
+            trail.style.top = e.clientY + 'px';
+            trail.style.width = '6px';
+            trail.style.height = '6px';
+            trail.style.background = '#050C9C';
+            trail.style.borderRadius = '50%';
+            trail.style.pointerEvents = 'none';
+            trail.style.zIndex = '9999';
+            trail.style.transition = 'all 0.5s ease';
+            document.body.appendChild(trail);
+            
+            setTimeout(() => {
+                trail.style.opacity = '0';
+                trail.style.transform = 'scale(2)';
+                setTimeout(() => trail.remove(), 500);
+            }, 100);
+        });

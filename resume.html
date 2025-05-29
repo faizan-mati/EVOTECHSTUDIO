@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faizan Mati - Software Developer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .resume-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+            color: white;
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+            background: linear-gradient(45deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .title-wrapper {
+            margin-bottom: 30px;
+        }
+        
+        .header .title {
+            font-size: 1.4em;
+            font-weight: 300;
+            color: #cbd5e0;
+            margin-bottom: 10px;
+        }
+        
+        .typing-text {
+            font-size: 1em;
+            color: #9ca3af;
+            font-style: italic;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+            font-size: 0.9em;
+        }
+        
+        .contact-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+        
+        .contact-icon {
+            font-size: 1.2em;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 0;
+            min-height: 600px;
+        }
+        
+        .left-column {
+            padding: 40px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+        }
+        
+        .right-column {
+            background: linear-gradient(to bottom, #f1f5f9 0%, #e2e8f0 100%);
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        .right-column::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .section h2 {
+            color: #1a202c;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-right: 15px;
+            position: relative;
+        }
+        
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, #667eea, transparent);
+            border-radius: 2px;
+        }
+        
+        .section-icon {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.1em;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .summary {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #4a5568;
+            padding: 25px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 15px;
+            border-left: 4px solid #667eea;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        
+        .job, .project-item {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .job:hover, .project-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+        
+        .job-header {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .job-title {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 5px;
+        }
+        
+        .company {
+            color: #667eea;
+            font-weight: 500;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+        
+        .duration {
+            color: #718096;
+            font-size: 0.9em;
+            background: #edf2f7;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        
+        .achievements {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        .achievements li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+        
+        .achievements li:before {
+            content: "✦";
+            color: #667eea;
+            font-size: 1.2em;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .tech-stack {
+            margin-top: 15px;
+            padding: 15px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+        }
+        
+        .tech-stack strong {
+            color: #1a202c;
+            font-size: 0.9em;
+        }
+        
+        .tech-stack span {
+            color: #4a5568;
+            font-size: 0.9em;
+        }
+        
+        .skills-grid {
+            display: grid;
+            gap: 25px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
+        }
+        
+        .skill-category h3 {
+            color: #1a202c;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .skill-category h3:before {
+            content: "◆";
+            color: #667eea;
+            font-size: 0.8em;
+        }
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .education-timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .education-timeline:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            position: relative;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .education-item:before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 2px 6px rgba(102, 126, 234, 0.3);
+        }
+        
+        .degree {
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 5px;
+            font-size: 1em;
+        }
+        
+        .institution {
+            color: #667eea;
+            font-size: 0.95em;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .edu-duration {
+            color: #718096;
+            font-size: 0.85em;
+            background: #edf2f7;
+            padding: 3px 10px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .coursework {
+            margin-top: 10px;
+            font-size: 0.85em;
+            color: #4a5568;
+            font-style: italic;
+        }
+        
+        .certification {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+        
+        .cert-title {
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+        
+        .cert-org {
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .cert-date {
+            color: #718096;
+            font-size: 0.8em;
+            background: #edf2f7;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2.5em;
+            }
+            
+            .left-column, .right-column {
+                padding: 25px 20px;
+            }
+            
+            .resume-container {
+                border-radius: 10px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .header::before {
+                display: none;
+            }
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.8em;
+            color: #718096;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <header class="header">
+            <div class="header-content">
+                <h1>FAIZAN MATI</h1>
+                <div class="title-wrapper">
+                    <div class="title">Full Stack Developer & Software Engineer</div>
+                    <div class="typing-text">Crafting digital solutions with passion & precision</div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>faizanmatee@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>+92 324 3354583</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Korangi, Karachi, Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">💼</span>
+                        <span>linkedin.com/in/faizan-mati</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🔗</span>
+                        <span>github.com/faizan-mati</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">👨‍💻</div>
+                        <h2>Professional Summary</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="summary">
+                        Full Stack Developer with 1.5+ years of professional experience specializing in MERN stack development. Currently serving as Software Engineer and Team Lead at AI Ameera Apparel, leading a team of 3 developers and delivering ERP solutions that improved operational efficiency by 30%. Proven track record in developing scalable web applications, managing cross-functional teams, and translating business requirements into technical solutions. Passionate about creating innovative software solutions and mentoring junior developers.
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">1.5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30%</span>
+                            <span class="stat-label">Efficiency Improved</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Team Members Led</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Users Served</span>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">💼</div>
+                        <h2>Professional Experience</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Software Engineer & Team Lead</div>
+                            <div class="company">AI Ameera Apparel</div>
+                            <div class="duration">November 2024 - Present</div>
+                        </div>
+                        <ul class="achievements">
+                            <li>Lead a cross-functional team of 3 developers in designing and implementing custom ERP solutions, resulting in 30% improved operational efficiency</li>
+                            <li>Currently spearheading development of a comprehensive ERP system in collaboration with business consultants, implementing custom modules for order processing and inventory management</li>
+                            <li>Manage full-stack development of company website using MERN stack technologies (React.js, Node.js, Express.js, MongoDB)</li>
+                            <li>Coordinate project timelines, delegate tasks to junior developers, and ensure 100% on-time delivery of software milestones</li>
+                            <li>Collaborate with business stakeholders to gather requirements and translate them into detailed technical specifications</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Web Developer</div>
+                            <div class="company">The Hunar Foundation</div>
+                            <div class="duration">November 2023 - October 2024</div>
+                        </div>
+                        <ul class="achievements">
+                            <li>Designed and developed a comprehensive Institute Management System (IMS) from scratch using PHP, MySQL, and JavaScript, serving 500+ students and 50+ staff members</li>
+                            <li>Created a custom WordPress theme and built the responsive foundation website using HTML, CSS, Bootstrap, and JavaScript</li>
+                            <li>Implemented automated reporting features that reduced administrative workload by approximately 10 hours per week</li>
+                            <li>Collaborated in an agile team of 2 developers to deliver projects within strict deadlines while maintaining code quality</li>
+                            <li>Optimized database queries and improved system performance by 25% through efficient MySQL optimization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <div class="job-header">
+                            <div class="job-title">Founder & Lead Developer</div>
+                            <div class="company">EVO TECH STUDIO (Part-time Startup)</div>
+                            <div class="duration">2023 - Present</div>
+                        </div>
+                        <ul class="achievements">
+                            <li>Founded and currently leading a part-time startup venture focused on providing online agency services</li>
+                            <li>Manage end-to-end project delivery including client consultation, technical architecture, and development</li>
+                            <li>Developed multiple client websites and web applications using modern frameworks and technologies</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">🚀</div>
+                        <h2>Key Projects</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="job-header">
+                            <div class="job-title">EVO TECH STUDIO - Agency Website</div>
+                            <div class="company">Personal Project | Full Stack Development</div>
+                            <div class="duration">2023 - Present</div>
+                        </div>
+                        <ul class="achievements">
+                            <li>Developed a complete agency website showcasing web development services and portfolio</li>
+                            <li>Built using modern web technologies with responsive design and optimized user experience</li>
+                            <li>Implemented contact forms, service pages, and portfolio showcase functionality</li>
+                            <li>Currently serves as the primary business platform for client acquisition and project showcase</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Technologies:</strong> <span>HTML5, CSS3, JavaScript, Bootstrap, Responsive Design</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="job-header">
+                            <div class="job-title">School Management System (SMS)</div>
+                            <div class="company">Frontend Development Project</div>
+                            <div class="duration">2023</div>
+                        </div>
+                        <ul class="achievements">
+                            <li>Designed and developed a complete frontend interface for a School Management System</li>
+                            <li>Created intuitive UI/UX for student enrollment, attendance tracking, and grade management</li>
+                            <li>Implemented fully functional frontend with interactive dashboards and responsive design</li>
+                            <li>Built modular components ready for backend integration and database connectivity</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <strong>Technologies:</strong> <span>HTML5, CSS3, JavaScript, Bootstrap, Frontend Architecture</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="right-column">
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">⚡</div>
+                        <h2>Technical Skills</h2>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Frontend Development</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React.js</span>
+                                <span class="skill-tag">Next.js</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">Bootstrap</span>
+                                <span class="skill-tag">React Native</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Backend Development</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Express.js</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">.NET</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Database & Cloud</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">SQL Server</span>
+                                <span class="skill-tag">Firebase</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Tools & Platforms</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">VS Code</span>
+                                <span class="skill-tag">WordPress</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">🎓</div>
+                        <h2>Education</h2>
+                    </div>
+                    <div class="education-timeline">
+                        <div class="education-item">
+                            <div class="degree">Bachelor of Science in Computer Science</div>
+                            <div class="institution">Ilma University</div>
+                            <div class="edu-duration">2024 - 2028</div>
+                            <div class="coursework">
+                                Relevant Coursework: Data Structures & Algorithms, Database Management Systems, Web Development, Software Engineering, Object-Oriented Programming
+                            </div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="degree">Diploma of Associate Engineering (CIT)</div>
+                            <div class="institution">Memon Industrial & Technical Institute</div>
+                            <div class="edu-duration">2021 - 2024</div>
+                        </div>
+                        
+                        <div class="education-item">
+                            <div class="degree">Matriculation</div>
+                            <div class="institution">Govt Boys High Secondary School</div>
+                            <div class="edu-duration">2019 - 2021</div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <div class="section-header">
+                        <div class="section-icon">🏆</div>
+                        <h2>Certifications</h2>
+                    </div>
+                    <div class="certification">
+                        <div class="cert-title">MERN Stack Developer</div>
+                        <div class="cert-org">Expertizo</div>
+                        <div class="cert-date">Dec 2023 - Apr 2024</div>
+                    </div>
+                    
+                    <div class="certification">
+                        <div class="cert-title">Advanced Web Application Development</div>
+                        <div class="cert-org">The Hunar Foundation</div>
+                        <div class="cert-date">Jan 2023 - Jun 2023</div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
